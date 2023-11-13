@@ -1,0 +1,72 @@
+.conteudo{
+    width:100%;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.conteudo h1{
+    font-size: 70px;
+}
+
+.conteudo p{
+    margin: 20px auto;
+    font-weight: 1;
+    font-size: 30px;
+    line-height: 25px;
+}
+
+button{
+    width: 300px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 20px;
+    border: 2px solid #5a3f00;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease; 
+}
+
+button:hover {
+    background: #5a3f00;
+    letter-spacing: 0.05em;
+    box-shadow: 0 0 35px #5a3f00;
+    transform: scale(1.1);
+    
+}
+
+
+@media screen and (max-width: 800px) {
+    .conteudo h1{
+        font-size: 50px;
+    }
+    .conteudo p{
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .conteudo h1{
+        font-size: 40px;
+    }
+    .conteudo p{
+        font-size: 15px;
+    }
+
+    button{
+        width: 200px;
+        font-size: 15px;
+    }
+}
+
+
+

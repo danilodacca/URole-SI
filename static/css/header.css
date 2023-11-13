@@ -1,0 +1,53 @@
+header {
+    padding: 20px;
+    display: flex;
+    background-color:#323232;
+    color: #fff;
+  }
+
+  nav {
+    display: flex;
+    width: 85%;
+    margin: auto;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+nav h1{
+    font-size: 30px;
+}
+
+header ul {
+    display: flex;
+}  
+
+header ul p {
+    font-size: 20px;
+    display: flex;
+}
+
+header ul p a {
+    display: flex;
+    margin-left: 40px;
+    color: #fff;
+    text-decoration: white;
+    font-weight: bold;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+header ul p a:hover {
+    color: #755305;
+}
+
+@media screen and (max-width: 800px) {
+    nav h1{
+        font-size: 15px;
+        text-align: center;
+    }
+    header ul p {
+        font-size: 10px;
+        text-align: center;
+    }
+}

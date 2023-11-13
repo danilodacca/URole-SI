@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,14 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        {% block title %}{% endblock %} | Watch that film!
+        {% block title %}{% endblock %} | Receitas do Habib!
     </title>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
+
 </head>
 
 <body>
     <header>
-        <h1>Receitas do Habib</h1>
-        <nav id="navegacao-principal">
+        <nav>
+            <h1>Receitas do Habib</h1>
             <ul>
                 <p><a href="{% url 'index' %}">Página Inicial</a></p>
                 <p><a href="{% url 'receitas' %}">Receitas</a></p>
