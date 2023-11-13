@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Página Inicial
+{% endblock title %}
+
+{% block content %}
+
+<body>
+    <div class="banner">
+        <div class="conteudo">
+            <h1>COMA BEM COMO NUNCA</h1>
+            <p>Esse site contém as melhores receitas do mundo. <BR>Todas criadas (ou não) pelo Habib.</p>
+                <a href="{% url 'receitas' %}">
+                <button type="button"><span></span>Veja todas as receitas</button>
+            </a>
+        </div>
+    </div>
+</body>
+
+{% endblock content %}
