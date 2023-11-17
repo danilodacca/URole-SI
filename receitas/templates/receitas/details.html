@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block title %} {{ receita.name }} ({{
+  receita.release_year }} {% endblock title %} {% block content %}
+    <h2>Detalhes do Filme {{ receita.name }} ({{ receita.release_year }})</h2>
+    
+    <section class="dados-de-filme">
+      <img src="{{ receita.poster_url }}" alt="Poster do filme {{ receita.name}}" />
+      <ul>
+        <li>Nome: {{ receita.name }}</li>
+        <li>Ano de Lançamento: {{ receita.release_year }}</li>
+      </ul>
+    </section>
+    
+    {% endblock content %}

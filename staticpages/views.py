@@ -6,6 +6,6 @@ def index(request):
     return render(request, 'staticpages/index.html', context)
 
 
-def receitas(request):
+def about(request):
     context = {}
-    return render(request, 'staticpages/receitas.html', context)
+    return render(request, 'staticpages/about.html', context)
