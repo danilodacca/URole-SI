@@ -1,0 +1,73 @@
+.banner3 {
+    width: 100%;
+    background-color: blueviolet;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../images/list.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.paginaSobre {
+    background-color: #ffffff;
+    padding: 80px;
+    margin: 0 170px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.paginaSobre h1{
+    font-size: 60px;
+    text-align: center;
+}
+
+.paginaSobre h2{
+    font-size: 50px;
+    text-align: center;
+    color: #666;
+}
+
+
+.paginaSobre article {
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.5;
+    font-size: larger;
+    color: #666;
+    text-align: justify;
+    
+}
+
+
+article p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+}
+
+article li{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+}
+
+
+@media screen and (max-width: 800px) {
+    .paginaReceita  {
+        width: 60%;
+        padding: 10vw;
+        margin: 0 10vw;
+      }
+    
+    .listaDeIng{
+        margin: 30px;
+    }
+    .paginaReceita .recipe-image{
+      width: 70%;
+    }
+
+    .listaDeIng h2{
+        font-size: small;
+    }
+    
+    .listaDeIng ul{
+        font-size: small;
+    }
+  }

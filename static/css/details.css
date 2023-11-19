@@ -1,0 +1,82 @@
+.fundo{
+    background: linear-gradient(to bottom, #999999, #000000);
+    position: relative;
+}
+.paginaReceita {
+    background-color: #ffffff;
+    padding: 70px;
+    margin: 0 70px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.paginaReceita h1{
+    font-size: 40px;
+    text-align: center;
+}
+
+.paginaReceita h2 {
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: #a0a0a0;
+    font-size: larger;
+    margin-top: 0;
+}
+
+
+.paginaReceita article {
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.5;
+    font-size: larger;
+    color: #666;
+}
+
+.listaDeIng{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color: #515050;
+    padding: 30px;
+    margin: 50px;
+    font-size: larger;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+article p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+}
+
+.paginaReceita .recipe-image {
+    display: block; 
+    margin: 0 auto; 
+    text-align: center; 
+    border-radius: 30px;
+    width: 500px;
+}
+
+@media screen and (max-width: 800px) {
+    .paginaReceita  {
+        width: 60%;
+        padding: 10vw;
+        margin: 0 10vw;
+      }
+    
+    .listaDeIng{
+        margin: 30px;
+    }
+    .paginaReceita .recipe-image{
+      width: 70%;
+    }
+
+    .listaDeIng h2{
+        font-size: small;
+    }
+    
+    .listaDeIng ul{
+        font-size: small;
+    }
+  }
