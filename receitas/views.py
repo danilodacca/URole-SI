@@ -13,7 +13,7 @@ def list_receitas(request):
 def detail_receita(request, receita_id):
     receita = get_object_or_404(Receita, pk=receita_id)
     context = {'receita': receita}
-    return render(request, 'receitas/detail.html', context)
+    return render(request, 'receitas/details.html', context)
 
 def search_receitas(request):
     context = {}
