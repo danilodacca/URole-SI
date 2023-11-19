@@ -19,7 +19,7 @@
         <ul class="single-list">
           {% for receita in receita_list %}
             <li class="single-item">
-              <a href="{% url 'receitas:details' forloop.counter %}">
+              <a href="{% url 'receitas:details' receita.id %}">
                 <div class="single-box">
                   <img src="{{ receita.poster_url }}" alt="{{ receita.name }}" class="recipe-image">
                   <div class="recipe-title">{{ receita.name }}</div>
