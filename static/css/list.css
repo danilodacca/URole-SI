@@ -67,7 +67,7 @@ body {
 .banner2 {
     width: 100%;
     background-color: blueviolet;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('static/images/list.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../images/list.jpeg');
     background-size: cover;
     background-position: center;
 }

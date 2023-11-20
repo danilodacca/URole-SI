@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Receita, Review
+from .models import Post, Review
 
-admin.site.register(Receita)
+admin.site.register(Post)
 admin.site.register(Review)

@@ -12,12 +12,12 @@
 
 
 <h2>Resultado da Busca</h2>
-{% if receita_list %}
+{% if post_list %}
 <section class="lista-de-cards">
-    {% for receita in receita_list %}
+    {% for post in post_list %}
     <article class="card">
-        <img src="{{ receita.poster_url }}" alt="Imagem da receita {{ receita.name}}">
-        <p>{{ receita.name }} ({{ receita.release_year }})</p>
+        <img src="{{ post.foto_url }}" alt="Imagem da post {{ post.name}}">
+        <p>{{ post.name }}</p>
     </article>
     {% endfor %}
 </section>

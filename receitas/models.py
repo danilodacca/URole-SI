@@ -2,13 +2,15 @@ from django.db import models
 from django.conf import settings
 
 
-class Receita(models.Model):
+class Post(models.Model):
     name = models.CharField(max_length=255)
-    release_year = models.IntegerField()
-    poster_url = models.URLField(max_length=200, null=True)
+    ingredientes = models.CharField(max_length=255)
+    desc = models.CharField(max_length=1000, default="valor temporário")
+    modo_de_preparo=models.CharField(max_length=1000)
+    foto_url = models.URLField(max_length=200, null=True)
 
     def __str__(self):
-        return f'{self.name} ({self.release_year})'
+        return f'{self.name}'
 
 
 class Review(models.Model):
@@ -16,7 +18,7 @@ class Review(models.Model):
                                on_delete=models.CASCADE)
     text = models.CharField(max_length=255)
     likes = models.IntegerField(default=0)
-    movie = models.ForeignKey(Receita, on_delete=models.CASCADE)
+    movie = models.ForeignKey(Post, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'"{self.text}" - {self.author.username}'

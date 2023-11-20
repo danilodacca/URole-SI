@@ -1,19 +1,19 @@
-{% extends 'base.html' %} {% block title %} {{ receita.name }} {% endblock title %} {% block content %}
+{% extends 'base.html' %} {% block title %} {{ post.name }} {% endblock title %} {% block content %}
     <div class="fundo">
       <section class="paginaReceita">
           <article>
-              <h1>{{ receita.name }}</h1>
-              <br><img src="{{ receita.poster_url }}" alt="{{ receita.name}}" class="recipe-image">
+              <h1>{{ post.name }}</h1>
+              <br><img src="{{ post.foto_url }}" alt="{{ post.name}}" class="recipe-image">
               <h2><br> Descriçãozinha</h2>
-              {{ receita.release_year }}
+              {{ post.desc }}
               <div class="listaDeIng">
                   <h2>Ingredientes</h2>
                   <ul>
-                    {{ receita.release_year }}
+                    {{ post.ingredientes }}
                   </ul>
               </div>
               <h2>Modo de preparo</h2>
-                    {{ receita.release_year }}
+                    {{ post.modo_de_preparo }}
               <h1>Bon appétit!</h1>
           </article>
       </section>

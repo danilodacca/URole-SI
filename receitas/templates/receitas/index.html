@@ -13,16 +13,16 @@
 
   <body>
     <div class="banner2">
-    {% if receita_list %}
+    {% if post_list %}
       <section class="list-container">
-        <h2>{{ receita.name }}</h2>
+        <h2>{{ post.name }}</h2>
         <ul class="single-list">
-          {% for receita in receita_list %}
+          {% for post in post_list %}
             <li class="single-item">
-              <a href="{% url 'receitas:details' receita.id %}">
+              <a href="{% url 'receitas:details' post.id %}">
                 <div class="single-box">
-                  <img src="{{ receita.poster_url }}" alt="{{ receita.name }}" class="recipe-image">
-                  <div class="recipe-title">{{ receita.name }}</div>
+                  <img src="{{ post.foto_url }}" alt="{{ post.name }}" class="recipe-image">
+                  <div class="recipe-title">{{ post.name }}</div>
                 </div>
               </a>
             </li>                                             

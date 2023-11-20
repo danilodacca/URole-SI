@@ -1,42 +1,44 @@
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .models import Receita
+from .models import Post
 from django.shortcuts import render, get_object_or_404
 
 
-def list_receitas(request):
-    receita_list = Receita.objects.all()
-    context = {'receita_list': receita_list}
+def list_posts(request):
+    post_list = Post.objects.all()
+    context = {'post_list': post_list}
     return render(request, 'receitas/index.html', context)
 
-def detail_receita(request, receita_id):
-    receita = get_object_or_404(Receita, pk=receita_id)
-    context = {'receita': receita}
+def detail_post(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    context = {'post': post}
     return render(request, 'receitas/details.html', context)
 
-def search_receitas(request):
+def search_posts(request):
     context = {}
     if request.GET.get('query', False):
         search_term = request.GET['query'].lower()
-        receita_list = Receita.objects.filter(name__icontains=search_term)
-        context = {"receita_list": receita_list}
+        post_list = Post.objects.filter(name__icontains=search_term)
+        context = {"post_list": post_list}
     return render(request, 'receitas/search.html', context)
 
-def create_receita(request):
+def create_post(request):
     if request.method == 'POST':
-        receita_name = request.POST['name']
-        receita_ingredientes = request.POST['ingredientes']
-        receita_modo_de_preparo = request.POST['modo_de_preparo']
-        receita_foto_url = request.POST['foto_url']
-        receita = Receita(name=receita_name,
-                      ingredientes = receita_ingredientes,
-                      modo_de_preparo = receita_modo_de_preparo,
-                      foto_url = receita_foto_url
-                      )
-        receita.save()
+        post_name = request.POST['name']
+        post_desc = request.POST['desc']
+        post_ingredientes = request.POST['ingredientes']
+        post_modo_de_preparo = request.POST['modo_de_preparo']
+        post_foto_url = request.POST['foto_url']
+        post = Post(name=post_name,
+                    desc = post_desc,
+                    ingredientes = post_ingredientes,
+                    modo_de_preparo = post_modo_de_preparo,
+                    foto_url = post_foto_url
+                    )
+        post.save()
         return HttpResponseRedirect(
-            reverse('receitas:detail', args=(receita.id, )))
+            reverse('receitas:details', args=(post.id, )))
     else:
         return render(request, 'receitas/create.html', {})
     
