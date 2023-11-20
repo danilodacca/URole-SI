@@ -15,6 +15,9 @@
               <h2>Modo de preparo</h2>
                     {{ post.modo_de_preparo }}
               <h1>Bon appétit!</h1>
+              <br>
+              <a href="{% url 'receitas:update' post.id %}"class="button1"><span></span>Editar</a>
+              <br><a href="{% url 'receitas:delete' post.id %}"class="button1"><span></span>Apagar</a>
           </article>
       </section>
   </div>

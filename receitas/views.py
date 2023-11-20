@@ -42,3 +42,29 @@ def create_post(request):
     else:
         return render(request, 'receitas/create.html', {})
     
+def update_post(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+
+    if request.method == "POST":
+        post.name = request.POST['name']
+        post.desc = request.POST['desc']
+        post.ingredientes = request.POST['ingredientes']
+        post.modo_de_preparo = request.POST['modo_de_preparo']
+        post.foto_url = request.POST['foto_url']
+        post.save()
+        return HttpResponseRedirect(
+            reverse('receitas:details', args=(post.id, )))
+
+    context = {'post': post}
+    return render(request, 'receitas/update.html', context)
+
+
+def delete_post(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+
+    if request.method == "POST":
+        post.delete()
+        return HttpResponseRedirect(reverse('receitas:index'))
+
+    context = {'post': post}
+    return render(request, 'receitas/delete.html', context)

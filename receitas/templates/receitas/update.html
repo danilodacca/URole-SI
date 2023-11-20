@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Atualizar receita {{ post.name }} </h2>
+<form method="post" action="{% url 'receitas:update' post.id%}">
+  {% csrf_token %}
+  <p>
+    <label for="id_name">Nome da receita:</label>
+    <input type="text" name="name" id="id_name" value="{{ post.name }}"/>
+  </p>
+  <p>
+    <label for="id_ingredientes">Ingredientes:</label>
+    <input 
+    type="text" 
+    name="ingredientes" 
+    id="id_ingredientes"
+    value="{{ post.ingredientes }}" 
+    />
+  </p>
+  <p>
+    <label for="id_desc">Descreva aqui um pouco da receita:</label>
+    <input 
+    type="text" 
+    name="desc" 
+    id="id_desc" 
+    value="{{ post.desc }}"
+    />
+  </p>
+  <p>
+    <label for="id_modo_de_preparo">Modo de preparo:</label>
+    <input 
+    type="text" 
+    name="modo_de_preparo" 
+    id="id_modo_de_preparo" 
+    value="{{ post.modo_de_preparo }}"
+    />
+  </p>
+  <p>
+    <label for="id_foto_url">URL da foto da receita:</label>
+    <input 
+    type="url" 
+    name="foto_url" 
+    id="id_foto_url" 
+    value="{{ post.foto_url }}"
+    />
+  </p>
+  <button type="submit">Atualizar</button>
+</form>
+{% endblock content %}
+
