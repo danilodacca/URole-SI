@@ -1,13 +1,10 @@
 {% extends 'base.html' %} 
 {% block content %}
-  <h2>Todos os Filmes</h2>
+  <h2>Todas as receitas</h2>
   <section>
     <p>
-      Muitos resultados? <a href="{% url 'receitas:search' %}">Buscar Filmes</a>
-    </p>
-    <p>
-      Não encontrou o filme?
-      <a href="{% url 'receitas:create' %}">Adicionar Novo Filme</a>
+      Tem uma receita boa?
+      <a href="{% url 'receitas:create' %}">Adicionar Nova Receita</a>
     </p>
   </section>
 
@@ -33,6 +30,6 @@
   </body>
   
   {% else %}
-    <p>Não foi encontrado nenhum filme.</p>
+    <p>Não foi encontrado nenhuma receita.</p>
   {% endif %}
 {% endblock content %}
