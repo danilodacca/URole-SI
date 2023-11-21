@@ -13,7 +13,7 @@ class Post(models.Model):
         return f'{self.name}'
 
 
-class Review(models.Model):
+class Comment(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL,
                                on_delete=models.CASCADE)
     text = models.CharField(max_length=255)

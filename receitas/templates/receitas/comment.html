@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Adicionar comentário na receita {{ post.name }}</h2>
+
+<form action="{% url 'receitas:comment' post.id %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Postar Comentário</button>
+</form>
+
+<p><a href="{% url 'receitas:details' post.id %}">Voltar para a página da receita</a></p>
+{% endblock content %}
