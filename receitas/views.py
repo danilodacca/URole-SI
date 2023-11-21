@@ -36,6 +36,7 @@ class PostsDeleteView(generic.DeleteView):
     template_name = 'receitas/delete.html'
 
 def create_comment(request, post_id):
+    
     post = get_object_or_404(Post, pk=post_id)
     if request.method == 'POST':
         form = CommentForm(request.POST)
@@ -47,8 +48,9 @@ def create_comment(request, post_id):
                             post=post)
             comment.save()
             return HttpResponseRedirect(
-                reverse('receitas:detail', args=(post_id, )))
+                reverse('receitas:details', args=(post_id, ))
+                )
     else:
         form = CommentForm()
-    context = {'form': form, 'comment': comment}
+    context = {'form': form, 'post': post}
     return render(request, 'receitas/comment.html', context)
