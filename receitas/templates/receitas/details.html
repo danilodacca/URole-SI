@@ -22,4 +22,24 @@
       </section>
   </div>
   
-    {% endblock content %}
+  <section>
+    <header>
+        <h3>Comentários</h3>
+    </header>
+    <ul>
+        {% if post.comment_set.all %}
+            {% for comment in post.comment_set.all %}
+                <figure>
+                    <blockquote>
+                        "{{ comment.text }}"
+                    </blockquote>
+                    <figcaption>—{{ comment.author }}</figcaption>
+                </figure>
+            {% endfor %}
+        {% else %}
+            <p>Nenhum comentário.</p>
+        {% endif %}
+    </ul>
+</section>
+
+{% endblock content %}
