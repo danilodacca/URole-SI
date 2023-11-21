@@ -1,28 +1,11 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+
+{% block content %}
 <h2>Inserir Nova Receita</h2>
-<form method="POST" action="{% url 'receitas:create' %}">
-  {% csrf_token %}
-  <p>
-    <label for="id_name">Nome da receita:</label>
-    <input type="text" name="name" id="id_name" />
-  </p>
-  <p>
-    <label for="id_ingredientes">Ingredientes:</label>
-    <input type="text" name="ingredientes" id="id_ingredientes" />
-  </p>
-  <p>
-    <label for="id_desc">Descreva aqui um pouco da receita:</label>
-    <input type="text" name="desc" id="id_desc" />
-  </p>
-  <p>
-    <label for="id_modo_de_preparo">Modo de preparo:</label>
-    <input type="text" name="modo_de_preparo" id="id_modo_de_preparo" />
-  </p>
-  <p>
-    <label for="id_foto_url">URL da foto da receita:</label>
-    <input type="url" name="foto_url" id="id_foto_url" />
-  </p>
-  <button type="submit">Criar</button>
+<form method="post" action="{% url 'receitas:create' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Criar</button>
 </form>
 
 {% endblock content %}
