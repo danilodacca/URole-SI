@@ -7,7 +7,7 @@ from .forms import PostForm, CommentForm
 from django.views import generic
 
 
-class PostListView(generic.ListView):
+class PostsListView(generic.ListView):
     model = Post
     template_name = 'receitas/index.html'
 
