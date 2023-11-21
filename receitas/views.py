@@ -8,7 +8,7 @@ from .forms import PostForm
 from django.views import generic
 
 
-class PostListView(generic.ListView):
+class PostsListView(generic.ListView):
     model = Post
     template_name = 'receitas/index.html'
 
@@ -22,12 +22,17 @@ class PostsCreateView(generic.CreateView):
     model = Post
     form_class = PostForm
     template_name = 'receitas/create.html'
+    success_url = '/receitas/'
+    
 
 
 class PostsUpdateView(generic.UpdateView):
     model = Post
     template_name = 'receitas/update.html'
+    fields = ['name', 'ingredientes','desc','modo_de_preparo','foto_url' ]
+    success_url = '/receitas/'
 
 class PostsDeleteView(generic.DeleteView):
     model = Post
     template_name = 'receitas/delete.html'
+    success_url = '/receitas'
