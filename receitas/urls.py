@@ -4,11 +4,10 @@ from . import views
 
 app_name = 'receitas'
 urlpatterns = [
-    path('', views.list_posts, name='index'),
-    path('search/', views.search_posts, name='search'),
-    path('<int:post_id>', views.detail_post, name='details'),
-    path('create/', views.create_post, name='create'),
-    path('update/<int:post_id>/', views.update_post, name='update'),
-    path('delete/<int:post_id>/', views.delete_post, name='delete'),
+    path('', views.PostsListView.as_view(), name='index'),
+    path('<int:pk>/', views.PostsDetailView.as_view(), name='details'),
+    path('create/', views.PostsCreateView.as_view(), name='create'),
+    path('<int:pk>/update', views.PostsUpdateView.as_view(), name='update'),
+    path('<int:pk>/delete', views.PostsDeleteView.as_view(), name='delete'),
     path('<int:post_id>/comment/', views.create_comment, name='comment'),
 ]
