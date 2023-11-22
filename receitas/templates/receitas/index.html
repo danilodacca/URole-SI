@@ -25,6 +25,15 @@
   </body>
   
   {% else %}
-    <p>Não foi encontrado nenhuma receita.</p>
+  <body>
+    <div class="banner2">
+      <section class="list-container">
+        <br><br>
+        <h2>Nenhuma receita foi encontrada</h2>
+        <br><br>
+        <a href="{% url 'receitas:create' %}" class="button2">Adicionar Nova Receita</a>
+      </section>
+    </div>
+  </body>
   {% endif %}
 {% endblock content %}

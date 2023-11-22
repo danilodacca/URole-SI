@@ -10,6 +10,7 @@
                 <a href="{% url 'receitas:category' category.id %}"><li>{{ category.name }} (por {{category.author}}) </li></a>
                 {% endfor %}
             {% endif %}
+            
             </div>
               <h1>{{ post.name }}</h1>
               <br><img src="{{ post.foto_url }}" alt="{{ post.name}}" class="recipe-image">
