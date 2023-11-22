@@ -2,9 +2,14 @@
 {% block content %}
 <form action="{% url 'receitas:delete' post.id %}" method="post">
   {% csrf_token %}
-  <p>
-    Você tem certeza que deseja apagar a receita "{{ post.name }}"?
-  </p>
-  <button type="submit">Apagar</button>
+  <div class="fundo">
+    <section class="paginaReceita">
+        <article>
+            <h2>Você tem certeza que deseja apagar a receita "{{ post.name }}"?</h2>
+            <br><button type="submit" class="button1"><span></span>Apagar</button>
+        </article>
+    </section>
+</div>
 </form>
 {% endblock content %}
+

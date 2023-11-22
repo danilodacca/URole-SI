@@ -34,6 +34,7 @@ class PostsUpdateView(generic.UpdateView):
 class PostsDeleteView(generic.DeleteView):
     model = Post
     template_name = 'receitas/delete.html'
+    success_url = '/receitas/'
 
 def create_comment(request, post_id):
     
