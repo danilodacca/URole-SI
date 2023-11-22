@@ -1,21 +1,11 @@
-{% extends 'base.html' %}
-
-{% block title %}
-Categorias
-{% endblock title %}
-
+{% extends 'base.html' %} 
 {% block content %}
-<div class="titulocategoria"><h2>Categorias das Receitas</h2></div>
-
 <section>
-    {% for category in category_list %}
     <hr>
     <article>
-        <a href="{% url 'receitas:category' category.id %}">
-            <header>
-                <h3>{{category.name}} (de {{ category.author }}) </h3>
-            </header>
-        </a>
+        <header>
+            <h3>{{category.name}} (de {{ category.author }}) </h3>
+        </header>
         <ul class="single-list">
             {% for post in category.posts.all %}
             <li class="single-item">
@@ -31,12 +21,7 @@ Categorias
             </ul>
         </div>
     </article>
-    {% endfor %}
 
-    <a href="{% url 'receitas:create-category' %}"><button class="button1">Crie sua categoria</button></a>
-    <br>
 </section>
 
 {% endblock content %}
-
-     

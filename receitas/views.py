@@ -66,3 +66,8 @@ class CategoryCreateView(generic.CreateView):
     template_name = 'receitas/create_category.html'
     fields = ['name', 'author', 'posts']
     success_url = reverse_lazy('receitas:categories')
+
+class CategoryDetailView(generic.DetailView):
+    model = Category
+    template_name = 'receitas/category.html'
+    context_object_name = 'category'
