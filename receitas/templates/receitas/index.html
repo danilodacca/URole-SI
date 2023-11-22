@@ -1,18 +1,13 @@
 {% extends 'base.html' %} 
 {% block content %}
-  <h2>Todas as receitas</h2>
-  <section>
-    <p>
-      Tem uma receita boa?
-      <a href="{% url 'receitas:create' %}">Adicionar Nova Receita</a>
-    </p>
-  </section>
-
   <body>
     <div class="banner2">
     {% if post_list %}
       <section class="list-container">
-        <h2>{{ post.name }}</h2>
+        <br><br>
+        <h2>Receitas</h2>
+        <br><br>
+        <a href="{% url 'receitas:create' %}" class="button2">Adicionar Nova Receita</a>
         <ul class="single-list">
           {% for post in post_list %}
             <li class="single-item">
