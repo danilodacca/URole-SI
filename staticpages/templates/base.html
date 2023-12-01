@@ -24,6 +24,12 @@
         <nav>
             <h1>Receitas do Habib</h1>
             <ul>
+                {% if user.is_authenticated %}
+                    <li> Logado com {{ user.username }} </li>
+                    <li><a href="{% url 'logout' %}">Log out</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Log in</a></li>
+                {% endif %}
                 <p><a href="{% url 'index' %}">Página Inicial</a></p>
                 <p><a href="{% url 'receitas:index' %}">Receitas</a></p>
                 <p><a href="{% url 'receitas:categories' %}">Categorias</a></p>

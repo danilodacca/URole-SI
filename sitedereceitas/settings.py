@@ -31,6 +31,9 @@ ALLOWED_HOSTS = ["127.0.0.1", ".onrender.com"]
 
 CSRF_TRUSTED_ORIGINS = ["https://*.onrender.com/"] 
 
+LOGIN_REDIRECT_URL = 'index'
+
+LOGOUT_REDIRECT_URL = 'index'
 
 # Application definition
 
@@ -43,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'staticpages.apps.StaticpagesConfig',
     'receitas.apps.ReceitasConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
