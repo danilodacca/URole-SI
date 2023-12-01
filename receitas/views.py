@@ -16,6 +16,13 @@ class PostsDetailView(generic.DetailView):
     template_name = 'receitas/details.html'
     context_object_name = 'post'
 
+def search_posts(request):
+    context = {}
+    if request.GET.get('query', False):
+        search_term = request.GET['query'].lower()
+        movie_list = Post.objects.filter(name__icontains=search_term)
+        context = {"post_list": movie_list}
+    return render(request, 'receitas/search.html', context)
 
 class PostsCreateView(generic.CreateView):
     model = Post

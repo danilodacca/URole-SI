@@ -22,11 +22,13 @@
 <body>
     <header>
         <nav>
-            <a href="{% url 'index' %}"> <img src="{% static 'images/LogoVetorizado.svg' %}">
+            <a href="{% url 'index' %}"> 
+                <img src="{% static '/images/logo.jpg'%}" alt="URolê" class="logo"> 
+            </a>
             <ul>
                 <p><a href="{% url 'index' %}">Página Inicial</a></p>
                 <p><a href="{% url 'receitas:index' %}">Rolês</a></p>
-                <p><a href="{% url 'receitas:categories' %}">Busca</a></p>
+                <p><a href="{% url 'receitas:search' %}">Busca</a></p>
                 <p><a href="{% url 'about' %}">Sobre</a></p>
             </ul>
         </nav>
