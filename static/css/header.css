@@ -1,7 +1,7 @@
 header {
     padding: 20px;
     display: flex;
-    background-color:#323232;
+    background-color:rgb(71, 17, 100);
     color: #fff;
   }
 
@@ -38,7 +38,7 @@ header ul p a {
 }
 
 header ul p a:hover {
-    color: #755305;
+    color: rgb(54, 15, 78);
 }
 
 @media screen and (max-width: 800px) {

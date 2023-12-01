@@ -8,7 +8,7 @@
   .banner{
     width: 100%;
     background-color:blueviolet;
-    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('../images/paginaprincipal.jpeg');
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('../images/pagina_principal.avif');
     background-size: cover;
     background-position: center;
   }
@@ -59,7 +59,7 @@
 }
 
 .button2:hover {
-  background: #5a3f00;
-  box-shadow: 0 0 35px #5a3f00;
+  background: rgb(36, 17, 73);
+  box-shadow: rgb(36, 17, 73) #5a3f00;
   transform: scale(1.1);
 }
