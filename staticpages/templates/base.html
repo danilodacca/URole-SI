@@ -22,7 +22,9 @@
 <body>
     <header>
         <nav>
-            <h1>Receitas do Habib</h1>
+            <a href="{% url 'index' %}"> 
+                <img src="{% static '/images/logo.jpg'%}" alt="URolê" class="logo"> 
+            </a>
             <ul>
                 {% if user.is_authenticated %}
                     <li> Logado com {{ user.username }} </li>
@@ -31,8 +33,8 @@
                     <li><a href="{% url 'login' %}">Log in</a></li>
                 {% endif %}
                 <p><a href="{% url 'index' %}">Página Inicial</a></p>
-                <p><a href="{% url 'receitas:index' %}">Receitas</a></p>
-                <p><a href="{% url 'receitas:categories' %}">Categorias</a></p>
+                <p><a href="{% url 'receitas:index' %}">Rolês</a></p>
+                <p><a href="{% url 'receitas:search' %}">Busca</a></p>
                 <p><a href="{% url 'about' %}">Sobre</a></p>
             </ul>
         </nav>
@@ -45,7 +47,7 @@
 
     <footer>
         <p>Copyright 2023.</p>
-        <p>Feito por Danilo Dacca</p>
+        <p>URolê ©</p>
     </footer>
 </body>
 

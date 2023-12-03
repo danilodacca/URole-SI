@@ -26,6 +26,14 @@ class PostsDetailView(generic.DetailView):
     template_name = 'receitas/details.html'
     context_object_name = 'role'
 
+def search_roles(request):
+    context = {}
+    if request.GET.get('query', False):
+        search_term = request.GET['query'].lower()
+        role_list = Role.objects.filter(name__icontains=search_term)
+        context = {"role_list": role_list}
+    return render(request, 'receitas/search.html', context)
+
 @method_decorator(user_passes_test(staff_required, login_url='/accounts/login'), name='dispatch')
 class PostsCreateView(generic.CreateView):
     model = Role

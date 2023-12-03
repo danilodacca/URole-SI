@@ -8,7 +8,7 @@
         <h2>Receitas</h2>
         <br><br>
         {% if user.is_authenticated %}
-            <a href="{% url 'receitas:create' %}" class="button2">Adicionar Nova Receita</a>
+            <a href="{% url 'receitas:create' %}" class="button2">Adicionar Rolê</a>
         {% endif %}
         
         <ul class="single-list">
@@ -32,10 +32,10 @@
     <div class="banner2">
       <section class="list-container">
         <br><br>
-        <h2>Nenhuma receita foi encontrada</h2>
+        <h2>Nenhum rolê foi encontrado...</h2>
         <br><br>
         {% if user.is_authenticated %}
-            <a href="{% url 'receitas:create' %}" class="button2">Adicionar Nova Receita</a>
+            <a href="{% url 'receitas:create' %}" class="button2">Adicionar Rolê</a>
         {% endif %}
       </section>
     </div>

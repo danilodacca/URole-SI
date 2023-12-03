@@ -8,7 +8,7 @@
   .banner{
     width: 100%;
     background-color:blueviolet;
-    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('../images/paginaprincipal.jpeg');
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('../images/pagina_principal.avif');
     background-size: cover;
     background-position: center;
   }
@@ -25,7 +25,7 @@
     border-radius: 25px;
     font-weight: bold;
     font-size: 20px;
-    border: 2px solid #5a3f00;
+    border: 2px solid rgb(71, 17, 100);
     background: transparent;
     color: white;
     cursor: pointer;
@@ -34,11 +34,9 @@
 }
 
 .button:hover {
-    background: #5a3f00;
-    letter-spacing: 0.05em;
-    box-shadow: 0 0 35px #5a3f00;
-    transform: scale(1.1);
-    
+    background: rgb(71, 17, 100);
+    box-shadow: 0 0 35px rgb(71, 17, 100);
+    transform: scale(1.1); 
 }
 
 .button2{
@@ -50,7 +48,7 @@
   border-radius: 20px;
   font-weight: bold;
   font-size: 20px;
-  border: 2px solid #5a3f00;
+  border: 2px solid rgb(71, 17, 100);
   background: transparent;
   color: white;
   cursor: pointer;
@@ -59,7 +57,12 @@
 }
 
 .button2:hover {
-  background: #5a3f00;
-  box-shadow: 0 0 35px #5a3f00;
+  background: rgb(36, 17, 73);
+  box-shadow: rgb(36, 17, 73);
   transform: scale(1.1);
 }
+
+.logo {
+  max-width: 10%;
+  height: auto;
+  }

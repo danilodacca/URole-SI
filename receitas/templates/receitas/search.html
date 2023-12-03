@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+<h2>Filtrar Rolês</h2>
+<form action="{% url 'receitas:search' %}">
+    <p>
+       
+        <div class="icon"></div>
+        <div class="input">
+            <input type="text" name="query" id="id_query" />
+        </div>
+    </p>
+    <button type="submit">Buscar</button>
+</form>
+</body>
+
+<div class="banner2">
+    {% if post_list %}
+      <section class="list-container">
+        <br><br>
+        <h2>Resultados</h2>
+        <br><br>
+        <a href="{% url 'receitas:create' %}" class="button2">Adicionar Nova Receita</a>
+        <ul class="single-list">
+          {% for post in post_list %}
+            <li class="single-item">
+              <a href="{% url 'receitas:details' post.id %}">
+                <div class="single-box">
+                  <img src="{{ post.foto_url }}" alt="{{ post.name }}" class="recipe-image">
+                  <div class="recipe-title">{{ post.name }}</div>
+                </div>
+              </a>
+            </li>                                             
+          {% endfor %}
+        </ul>
+      </section>
+    </div>
+    {% else %}
+<h2>Não possível achar esse rolê...</h2>
+{% endif %}
+
+{% endblock content %}
+
