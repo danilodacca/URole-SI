@@ -1,34 +1,34 @@
-{% extends 'base.html' %} {% block title %} {{ post.name }} {% endblock title %} {% block content %}
+{% extends 'base.html' %} {% block title %} {{ role.name }} {% endblock title %} {% block content %}
     <div class="fundo">
       <section class="paginaReceita">
           <article>
-            {% if post.category_set.all %}
+            {% if role.category_set.all %}
 
             <div class="catdet">
                 <h3>Categorias</h3>
-                {% for category in post.category_set.all %}
+                {% for category in role.category_set.all %}
                 <a href="{% url 'receitas:category' category.id %}"><li>{{ category.name }} (por {{category.author}}) </li></a>
                 {% endfor %}
             {% endif %}
             
             </div>
-              <h1>{{ post.name }}</h1>
-              <br><img src="{{ post.foto_url }}" alt="{{ post.name}}" class="recipe-image">
+              <h1>{{ role.name }}</h1>
+              <br><img src="{{ role.foto_url }}" alt="{{ role.name}}" class="recipe-image">
               <h2><br> Descriçãozinha</h2>
-              {{ post.desc }}
+              {{ role.desc }}
               <div class="listaDeIng">
                   <h2>Ingredientes</h2>
                   <ul>
-                    {{ post.ingredientes }}
+                    {{ role.ingredientes }}
                   </ul>
               </div>
               <h2>Modo de preparo</h2>
-                    {{ post.modo_de_preparo }}
+                    {{ role.modo_de_preparo }}
               <h1>Bon appétit!</h1>
-              <h2>(Publicado em: {{post.date}}) </h2>
+              <h2>(Publicado em: {{role.date}}) </h2>
               <br>
-              <a href="{% url 'receitas:update' post.id %}"class="button1"><span></span>Editar</a>
-              <br><a href="{% url 'receitas:delete' post.id %}"class="button1"><span></span>Apagar</a>
+              <a href="{% url 'receitas:update' role.id %}"class="button1"><span></span>Editar</a>
+              <br><a href="{% url 'receitas:delete' role.id %}"class="button1"><span></span>Apagar</a>
           </article>
       </section>
   </div>
@@ -38,8 +38,8 @@
         <h3>Comentários</h3>
     </header>
     <ul>
-        {% if post.comment_set.all %}
-            {% for comment in post.comment_set.all %}
+        {% if role.comment_set.all %}
+            {% for comment in role.comment_set.all %}
                 <figure>
                     <blockquote>
                         "{{ comment.text }}"
@@ -53,7 +53,7 @@
     </ul>
     <hr>
 
-    <a href="{% url 'receitas:comment' post.pk %}"><button>Adicione um comentário</button></a>
+    <a href="{% url 'receitas:comment' role.pk %}"><button>Adicione um comentário</button></a>
 </section>
 
 {% endblock content %}

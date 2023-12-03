@@ -7,12 +7,12 @@
             <h3>{{category.name}} (de {{ category.author }}) </h3>
         </header>
         <ul class="single-list">
-            {% for post in category.posts.all %}
+            {% for role in category.roles.all %}
             <li class="single-item">
-                <a href="{% url 'receitas:details' post.id %}">
+                <a href="{% url 'receitas:details' role.id %}">
                     <div class="single-box">
-                        <img src="{{ post.foto_url }}" alt="{{ post.name }}" class="recipe-image">
-                        <div class="recipe-title">{{ post.name }}</div>
+                        <img src="{{ role.foto_url }}" alt="{{ role.name }}" class="recipe-image">
+                        <div class="recipe-title">{{ role.name }}</div>
                       </div>
                 </a>
             </li>

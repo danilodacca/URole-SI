@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Atualizar a receita {{ post.name }}</h2>
-<form method="POST" action="{% url 'receitas:update' post.id%}">
+<h2>Atualizar a receita {{ role.name }}</h2>
+<form method="POST" action="{% url 'receitas:update' role.id%}">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Atualizar</button>

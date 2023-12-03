@@ -2,19 +2,22 @@
 {% block content %}
   <body>
     <div class="banner2">
-    {% if post_list %}
+    {% if role_list %}
       <section class="list-container">
         <br><br>
         <h2>Receitas</h2>
         <br><br>
-        <a href="{% url 'receitas:create' %}" class="button2">Adicionar Nova Receita</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'receitas:create' %}" class="button2">Adicionar Nova Receita</a>
+        {% endif %}
+        
         <ul class="single-list">
-          {% for post in post_list %}
+          {% for role in role_list %}
             <li class="single-item">
-              <a href="{% url 'receitas:details' post.id %}">
+              <a href="{% url 'receitas:details' role.id %}">
                 <div class="single-box">
-                  <img src="{{ post.foto_url }}" alt="{{ post.name }}" class="recipe-image">
-                  <div class="recipe-title">{{ post.name }}</div>
+                  <img src="{{ role.foto_url }}" alt="{{ role.name }}" class="recipe-image">
+                  <div class="recipe-title">{{ role.name }}</div>
                 </div>
               </a>
             </li>                                             
@@ -31,7 +34,9 @@
         <br><br>
         <h2>Nenhuma receita foi encontrada</h2>
         <br><br>
-        <a href="{% url 'receitas:create' %}" class="button2">Adicionar Nova Receita</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'receitas:create' %}" class="button2">Adicionar Nova Receita</a>
+        {% endif %}
       </section>
     </div>
   </body>

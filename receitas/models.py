@@ -3,34 +3,35 @@ from django.conf import settings
 from django.utils import timezone
 
 
-class Post(models.Model):
+class Role(models.Model):
     name = models.CharField(max_length=255)
-    ingredientes = models.CharField(max_length=255)
-    desc = models.CharField(max_length=1000, default="valor temporário")
-    modo_de_preparo=models.CharField(max_length=1000)
-    foto_url = models.URLField(max_length=200, null=True)
-    date = models.DateTimeField(default=timezone.now)
+    date = models.DateField(null=True)
+    start_time = models.TimeField(null=True)
+    end_time = models.TimeField(null=True)
+    address = models.CharField(max_length=100, null=True)
+    staff = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
+    banner_url = models.TextField(verbose_name="URL do Banner",blank=True, null=True)
+    about = models.TextField(null=True) 
+    expired = models.BooleanField(default=False)
 
+    class Meta:
+        verbose_name_plural = "Rolês"
+
+    def save(self, *args, **kwargs):
+        return super().save(*args, **kwargs)
+    
+    def __str__(self):
+        return self.name
     def __str__(self):
         return f'{self.name}'
 
 
-class Comment(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL,
-                               on_delete=models.CASCADE)
-    text = models.CharField(max_length=255)
-    likes = models.IntegerField(default=0)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    date = models.DateTimeField(default=timezone.now)
-
-    def __str__(self):
-        return f'"{self.text}" - {self.author.username}'
 
 class Category(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL,
                                on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
-    posts = models.ManyToManyField(Post)
+    roles = models.ManyToManyField(Role)
 
     def __str__(self):
         return f'{self.name} by {self.author}'

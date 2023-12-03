@@ -2,59 +2,49 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from django.shortcuts import render, get_object_or_404
-from .models import Post, Comment, Category
-from .forms import PostForm, CommentForm
+from django.contrib.admin.views.decorators import user_passes_test
+from django.utils.decorators import method_decorator
+from .models import Role, Category
+from .forms import RoleForm
 from django.views import generic
 
+def staff_required(user):
+    return user.is_authenticated and  user.is_staff
 
-class PostsListView(generic.ListView):
-    model = Post
+def user_login_required(user):
+    return user.is_authenticated
+
+def is_user(user):
+    return not user.is_staff
+
+class RolesListView(generic.ListView):
+    model = Role
     template_name = 'receitas/index.html'
 
 class PostsDetailView(generic.DetailView):
-    model = Post
+    model = Role
     template_name = 'receitas/details.html'
-    context_object_name = 'post'
+    context_object_name = 'role'
 
-
+@method_decorator(user_passes_test(staff_required, login_url='/accounts/login'), name='dispatch')
 class PostsCreateView(generic.CreateView):
-    model = Post
-    form_class = PostForm
+    model = Role
+    form_class = RoleForm
     template_name = 'receitas/create.html'
     success_url = '/receitas/'
     
-
-
+@method_decorator(user_passes_test(staff_required, login_url='/accounts/login'), name='dispatch')
 class PostsUpdateView(generic.UpdateView):
-    model = Post
+    model = Role
     template_name = 'receitas/update.html'
-    fields = ['name', 'ingredientes','desc','modo_de_preparo','foto_url' ]
+    fields = ['name', 'date', 'start_time', 'end_time', 'address', 'banner_url', 'about']
     success_url = '/receitas/'
 
+@method_decorator(user_passes_test(staff_required, login_url='/accounts/login'), name='dispatch')
 class PostsDeleteView(generic.DeleteView):
-    model = Post
+    model = Role
     template_name = 'receitas/delete.html'
     success_url = '/receitas/'
-
-def create_comment(request, post_id):
-    
-    post = get_object_or_404(Post, pk=post_id)
-    if request.method == 'POST':
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment_author = form.cleaned_data['author']
-            comment_text = form.cleaned_data['text']
-            comment = Comment(author=comment_author,
-                            text=comment_text,
-                            post=post)
-            comment.save()
-            return HttpResponseRedirect(
-                reverse('receitas:details', args=(post_id, ))
-                )
-    else:
-        form = CommentForm()
-    context = {'form': form, 'post': post}
-    return render(request, 'receitas/comment.html', context)
 
 class CategoryListView(generic.ListView):
     model = Category
@@ -64,7 +54,7 @@ class CategoryListView(generic.ListView):
 class CategoryCreateView(generic.CreateView):
     model = Category
     template_name = 'receitas/create_category.html'
-    fields = ['name', 'author', 'posts']
+    fields = ['name', 'author', 'roles']
     success_url = reverse_lazy('receitas:categories')
 
 class CategoryDetailView(generic.DetailView):

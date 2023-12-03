@@ -32,8 +32,8 @@ ALLOWED_HOSTS = ["127.0.0.1", ".onrender.com"]
 CSRF_TRUSTED_ORIGINS = ["https://*.onrender.com/"] 
 
 LOGIN_REDIRECT_URL = 'index'
-
 LOGOUT_REDIRECT_URL = 'index'
+LOGIN_URL = 'login' 
 
 # Application definition
 

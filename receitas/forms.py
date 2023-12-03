@@ -1,33 +1,26 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Post, Comment
+from .models import Role
 
-class PostForm(ModelForm):
+class RoleForm(forms.ModelForm):
+    banner_url = forms.URLField(label='URL do banner')
     class Meta:
-        model = Post
-        fields = [
-            'name',
-            'ingredientes',
-            'desc',
-            'modo_de_preparo',
-            'foto_url',
-        ]
+        model = Role
+        fields = ('name', 'date', 'start_time', 'end_time', 'address', 'banner_url', 'about')
         labels = {
-            'name': 'Título',
-            'ingredientes': 'Ingredientes',
-            'desc':'Descrição',
-            'modo_de_preparo':'Modo de Preparo',
-            'foto_url': 'URL da Foto da Comida',
+            'name':'Nome do rolê',
+            'date':'Data',
+            'start_time':'Horário de Início',
+            'end_time':'Horário do Fim',
+            'address':'Endereço',
+            'banner_url':'URL do banner do evento',
+            'about':'Descrição e Informações'
         }
+        widgets = {
+                'date': forms.DateInput(attrs={'type': 'date'}),
+                'start_time':forms.TimeInput(attrs={'type': 'time'}),
+                'end_time':forms.TimeInput(attrs={'type': 'time'}),
+            }
 
-class CommentForm(ModelForm):
-    class Meta:
-        model = Comment
-        fields = [
-            'author',
-            'text',
-        ]
-        labels = {
-            'author': 'Usuário',
-            'text': 'Comentário',
-        }
+    def __str__(self):
+        return self.name
