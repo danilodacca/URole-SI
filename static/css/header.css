@@ -48,8 +48,18 @@ header ul p a:hover {
         font-size: 15px;
         text-align: center;
     }
+    .logo{
+        min-width: 60px;
+    }
+
     header ul p {
         font-size: 10px;
         text-align: center;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .logo {
+        min-width: 120px; 
     }
 }
