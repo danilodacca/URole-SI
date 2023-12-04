@@ -25,10 +25,12 @@ header ul {
 header ul p {
     font-size: 20px;
     display: flex;
+    justify-content: center;
 }
 
 header ul p a {
     display: flex;
+    justify-content: center;
     margin-left: 40px;
     color: #fff;
     text-decoration: white;
@@ -38,7 +40,7 @@ header ul p a {
 }
 
 header ul p a:hover {
-    color: rgb(54, 15, 78);
+    color: rgb(96, 47, 125);
 }
 
 @media screen and (max-width: 800px) {
@@ -46,8 +48,18 @@ header ul p a:hover {
         font-size: 15px;
         text-align: center;
     }
+    .logo{
+        min-width: 60px;
+    }
+
     header ul p {
         font-size: 10px;
         text-align: center;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .logo {
+        min-width: 120px; 
     }
 }
