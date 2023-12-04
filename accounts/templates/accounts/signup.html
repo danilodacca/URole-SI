@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 
 {% block title %}
@@ -5,12 +6,20 @@ Criar Usuário
 {% endblock title %}
 
 {% block content %}
-<h2>Criar Usuário</h2>
+<div class="banner2">
+    <section class="cadastro">
+        <article>
+            <h1>Criar Usuário</h1>
+            <form class="cadastroForm" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <br>
+                <button class="button1" type="submit">Criar</button>
+                <!-- <a type="submit"class="button1"><span></span>Criar</a> -->
+            </form>
+        </article>
+    </section>
+</div>
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Criar</button>
-</form>
+{% endblock content %}
 
-{% endblock content %} 

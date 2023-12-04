@@ -27,7 +27,6 @@
 
 .paginaReceita article {
     font-size: 16px;
-    font-family: 'Courier New', Courier, monospace;
     line-height: 1.5;
     font-size: larger;
     color: #666;
@@ -46,7 +45,6 @@
 }
 
 article p{
-    font-family: 'Courier New', Courier, monospace;
     font-size: large;
 }
 
@@ -58,30 +56,7 @@ article p{
     width: 500px;
 }
 
-.button1{
-    width: 150px;
-    padding: 15px 10px;
-    text-align: center;
-    display: block;
-    margin: 0px auto;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 20px;
-    border: 2px solid #000000;
-    background: transparent;
-    color: #333;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.3s ease; 
-}
 
-.button1:hover {
-    background: #787878;
-    letter-spacing: 0.05em;
-    box-shadow: 0 0 35px #000000;
-    transform: scale(1.1);
-    
-}
 
 .catdet h3{
     text-align: center;

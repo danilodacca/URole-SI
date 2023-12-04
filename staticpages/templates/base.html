@@ -17,6 +17,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/details.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/sobre.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}">
 </head>
 
 <body>
@@ -27,10 +29,10 @@
             </a>
             <ul>
                 {% if user.is_authenticated %}
-                    <li> Logado com {{ user.username }} </li>
-                    <li><a href="{% url 'logout' %}">Log out</a></li>
+                    <p> Logado com {{ user.username }} </p>
+                    <p><a href="{% url 'logout' %}">Logout</a></p>
                 {% else %}
-                    <li><a href="{% url 'login' %}">Log in</a></li>
+                <p><a href="{% url 'login' %}">Login</a></p>
                 {% endif %}
                 <p><a href="{% url 'index' %}">Página Inicial</a></p>
                 <p><a href="{% url 'roles:index' %}">Rolês</a></p>

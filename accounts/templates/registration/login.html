@@ -5,6 +5,9 @@ Login
 {% endblock title %}
 
 {% block content %}
+<div class="banner2">
+    <section class="cadastro">
+        <article>
 <h1>Login de Usuário</h1>
 
 {% if form.errors %}
@@ -19,12 +22,20 @@ Login
 {% endif %}
 {% endif %}
 
-<form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
-    {{ form.as_p}}
-    <button type="submit" value="login">Entrar</button>
-    <input type="hidden" name="next" value="{{ next }}">
-</form>
+
+
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                {{ form.as_p}}
+                <button class="button1" type="submit" value="login">Entrar</button>
+                <input type="hidden" name="next" value="{{ next }}">
+            </form>
+
+
 
 <p>Não possui usuário? <a href="{% url 'signup' %}">Cadastre-se</a></p>
+            </form>
+        </article>
+    </section>
+</div>
 {% endblock %}

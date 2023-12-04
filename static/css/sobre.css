@@ -29,7 +29,6 @@
 
 .paginaSobre article {
     font-size: 16px;
-    font-family: 'Courier New', Courier, monospace;
     line-height: 1.5;
     font-size: larger;
     color: #666;
@@ -39,12 +38,10 @@
 
 
 article p{
-    font-family: 'Courier New', Courier, monospace;
     font-size: 25px;
 }
 
 article li{
-    font-family: 'Courier New', Courier, monospace;
     font-size: 25px;
 }
 

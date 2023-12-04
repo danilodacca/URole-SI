@@ -1,0 +1,75 @@
+.banner3 {
+    width: 100%;
+    background-color: blueviolet;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../images/list.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.cadastro {
+    background-color: #ffffff;
+    padding: 80px;
+    margin: 0 170px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color:rgba(0, 0, 0, 0.75) !important;
+}
+.cadastro h1{
+    font-size: 60px;
+    text-align: center;
+    color:rgba(0, 0, 0, 0.75) !important;
+    
+}
+
+.cadastroForm{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important; 
+    color:rgba(0, 0, 0, 0.75) !important;
+}
+
+
+.cadastro article {
+    font-size: 16px;
+    line-height: 1.5;
+    font-size: larger;
+    color:rgba(0, 0, 0, 0.75) !important;
+    text-align: justify;
+    
+}
+
+
+article p{
+    font-size: 25px;
+    color:rgba(0, 0, 0, 0.75) !important;
+}
+
+article li{
+    font-size: 25px;
+}
+
+  .button1{
+    width: 150px;
+    padding: 15px 10px;
+    text-align: center;
+    display: block;
+    margin: 30px auto;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    border: 2px solid rgb(71, 17, 100);
+    background: transparent;
+    color: rgb(71, 17, 100);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease; 
+}
+
+.button1:hover {
+    background: rgb(48, 10, 69);
+    letter-spacing: 0.05em;
+    color: white;
+    box-shadow: 0 0 35px #000000;
+    transform: scale(1.1);
+    
+}
