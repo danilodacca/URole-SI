@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block title %} {{ role.name }} {% endblock title %} {% block content %}
+    <div class="fundo">
+      <section class="paginaReceita">
+          <article>
+            </div>
+              <h1>{{ role.name }}</h1>
+              <br><img src="{{ role.foto_url }}" alt="{{ role.name}}" class="recipe-image">
+              <h2><br> Descrição</h2>
+              {{ role.desc }}
+              <div class="listaDeIng">
+                  <h2>Ingredientes</h2>
+                  <ul>
+                    {{ role.ingredientes }}
+                  </ul>
+              </div>
+              <h2>Modo de preparo</h2>
+                    {{ role.modo_de_preparo }}
+              <h1>Bon appétit!</h1>
+              <h2>(Publicado em: {{role.date}}) </h2>
+              <br>
+              <a href="{% url 'roles:update' role.id %}"class="button1"><span></span>Editar</a>
+              <br><a href="{% url 'roles:delete' role.id %}"class="button1"><span></span>Apagar</a>
+          </article>
+      </section>
+  </div>
+  
+
+{% endblock content %}

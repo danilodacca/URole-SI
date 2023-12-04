@@ -2,7 +2,7 @@
 {% block content %}
 <body>
 <h2>Filtrar Rolês</h2>
-<form action="{% url 'receitas:search' %}">
+<form action="{% url 'rolês:search' %}">
     <p>
        
         <div class="icon"></div>
@@ -20,14 +20,14 @@
         <br><br>
         <h2>Resultados</h2>
         <br><br>
-        <a href="{% url 'receitas:create' %}" class="button2">Adicionar Nova Receita</a>
+        <a href="{% url 'roles:create' %}" class="button2">Adicionar Novo Rolê</a>
         <ul class="single-list">
-          {% for post in post_list %}
+          {% for role in role_list %}
             <li class="single-item">
-              <a href="{% url 'receitas:details' post.id %}">
+              <a href="{% url 'roles:details' role.id %}">
                 <div class="single-box">
-                  <img src="{{ post.foto_url }}" alt="{{ post.name }}" class="recipe-image">
-                  <div class="recipe-title">{{ post.name }}</div>
+                  <img src="{{ role.banner_url }}" alt="{{ role.name }}" class="recipe-image">
+                  <div class="recipe-title">{{ role.name }}</div>
                 </div>
               </a>
             </li>                                             

@@ -2,7 +2,7 @@ from django import forms
 from django.forms import ModelForm
 from .models import Role
 
-class RoleForm(forms.ModelForm):
+class RoleForm(ModelForm):
     banner_url = forms.URLField(label='URL do banner')
     class Meta:
         model = Role

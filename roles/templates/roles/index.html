@@ -5,16 +5,16 @@
     {% if role_list %}
       <section class="list-container">
         <br><br>
-        <h2>Receitas</h2>
+        <h2>Rolês</h2>
         <br><br>
         {% if user.is_authenticated %}
-            <a href="{% url 'receitas:create' %}" class="button2">Adicionar Rolê</a>
+            <a href="{% url 'roles:create' %}" class="button2">Adicionar Rolê</a>
         {% endif %}
         
         <ul class="single-list">
           {% for role in role_list %}
             <li class="single-item">
-              <a href="{% url 'receitas:details' role.id %}">
+              <a href="{% url 'roles:details' role.id %}">
                 <div class="single-box">
                   <img src="{{ role.foto_url }}" alt="{{ role.name }}" class="recipe-image">
                   <div class="recipe-title">{{ role.name }}</div>
@@ -35,7 +35,7 @@
         <h2>Nenhum rolê foi encontrado...</h2>
         <br><br>
         {% if user.is_authenticated %}
-            <a href="{% url 'receitas:create' %}" class="button2">Adicionar Rolê</a>
+            <a href="{% url 'roles:create' %}" class="button2">Adicionar Rolê</a>
         {% endif %}
       </section>
     </div>

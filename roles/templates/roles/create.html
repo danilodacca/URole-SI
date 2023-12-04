@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Inserir Nova Receita</h2>
-<form method="post" action="{% url 'receitas:create' %}">
+<h2>Adicionar Novo Rolê</h2>
+<form method="post" action="{% url 'roles:create' %}">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Criar</button>
