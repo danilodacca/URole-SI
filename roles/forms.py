@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Role
+from .models import Role, Ticket
 
 class RoleForm(ModelForm):
     banner_url = forms.URLField(label='URL do banner')
@@ -22,5 +22,16 @@ class RoleForm(ModelForm):
                 'end_time':forms.TimeInput(attrs={'type': 'time'}),
             }
 
+    def __str__(self):
+        return self.name
+
+class TicketForm(forms.ModelForm):
+    class Meta:
+        model = Ticket
+        fields = ('type', 'price')
+        labels = {
+            'type':'Nome do ingresso',
+            'price':'preço',
+        }
     def __str__(self):
         return self.name

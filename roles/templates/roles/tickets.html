@@ -1,0 +1,48 @@
+{% extends 'base.html' %} 
+{% block content %}
+  <body>
+    <div class="banner2">
+    {% if ticket_list %}
+      <section class="list-container">
+        <br><br>
+        <h2>Ingressos</h2>
+        <br><br>
+        
+        <ul class="single-list">
+            <img src="{{ role.banner_url }}" alt="{{ role.name }}" class="recipe-image">
+            {% for ticket in ticket_list %}
+            <li class="single-item">
+                <div class="single-box">
+                  <div class="recipe-title">{{ ticket.type }} - R$ {{ticket.price}}</div>
+                </div>
+              </a>
+            </li>                                             
+          {% endfor %}
+        </ul>
+      </section>
+    </div>
+  </body>
+  
+  {% else %}
+  <body>
+    <div class="banner2">
+      <section class="list-container">
+        <br><br>
+        <h2>Nenhum ingresso foi encontrado...</h2>
+        <br><br>
+    </div>
+  </body>
+  {% endif %}
+
+  <body>
+    <div>
+      {% if user.is_authenticated %}
+          <h2><br> Organização</h2>
+          <a href="tickets/create" class="button2">Adicionar Ingresso</a>
+          <a href="{% url 'roles:tickets_update' role.id %}"class="button1"><span></span>Editar</a>
+          <br><a href="{% url 'roles:delete' role.id %}"class="button1"><span></span>Apagar</a>
+      {% endif %}
+          
+    </div>
+  </body>
+{% endblock content %}
