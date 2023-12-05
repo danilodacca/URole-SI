@@ -29,8 +29,11 @@
             </a>
             <ul>
                 {% if user.is_authenticated %}
-                    <p> Logado com {{ user.username }} </p>
+                    <p> Olá {{ user.username }}</p>
                     <p><a href="{% url 'logout' %}">Logout</a></p>
+                    {% if not user.is_staff %}
+                        <p><a href="{% url 'roles:mytickets' %}">Meus ingressos</a></p>        
+                    {% endif %}
                 {% else %}
                 <p><a href="{% url 'login' %}">Login</a></p>
                 {% endif %}

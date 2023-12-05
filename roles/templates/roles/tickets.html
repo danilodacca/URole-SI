@@ -14,12 +14,23 @@
             <li class="single-item">
                 <div class="single-box">
                   <div class="recipe-title">{{ ticket.type }} - R$ {{ticket.price}}</div>
+                  <br><br>
+                  {% if user.is_staff %}
+                      <a href="{% url 'roles:update_ticket' pk=pk_role type=ticket.type %}"class="button1"><span></span>Editar</a>
+                      <br><a href="{% url 'roles:delete_ticket' pk=pk_role type=ticket.type %}"class="button1"><span></span>Apagar</a>
+                  {% else %}
+                      <a href="{% url 'roles:buy_ticket' pk=pk_role type=ticket.type %}" class="button2">Comprar</a>
+                  {% endif %}
                 </div>
               </a>
             </li>                                             
           {% endfor %}
         </ul>
       </section>
+      {% if user.is_staff %}
+          <h2><br> Organização</h2>
+          <a href="tickets/create" class="button2">Adicionar Ingresso</a>
+      {% endif %}
     </div>
   </body>
   
@@ -30,19 +41,13 @@
         <br><br>
         <h2>Nenhum ingresso foi encontrado...</h2>
         <br><br>
+
+        {% if user.is_staff %}
+            <h2><br> Organização</h2>
+            <a href="tickets/create" class="button2">Adicionar Ingresso</a>
+        {% endif %}
     </div>
   </body>
   {% endif %}
 
-  <body>
-    <div>
-      {% if user.is_authenticated %}
-          <h2><br> Organização</h2>
-          <a href="tickets/create" class="button2">Adicionar Ingresso</a>
-          <a href="{% url 'roles:tickets_update' role.id %}"class="button1"><span></span>Editar</a>
-          <br><a href="{% url 'roles:delete' role.id %}"class="button1"><span></span>Apagar</a>
-      {% endif %}
-          
-    </div>
-  </body>
 {% endblock content %}

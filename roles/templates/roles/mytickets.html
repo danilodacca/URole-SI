@@ -2,27 +2,26 @@
 {% block content %}
   <body>
     <div class="banner2">
-    {% if role_list %}
+    {% if ticket_list %}
       <section class="list-container">
         <br><br>
-        <h2>Rolês</h2>
+        <h2>Ingressos</h2>
         <br><br>
         
         <ul class="single-list">
-          {% for role in role_list %}
+            {% for ticket in ticket_list %}
             <li class="single-item">
-              <a href="{% url 'roles:details' role.id %}">
                 <div class="single-box">
-                  <img src="{{ role.banner_url }}" alt="{{ role.name }}" class="recipe-image">
-                  <div class="recipe-title">{{ role.name }}</div>
+                  <div class="recipe-title">{{ ticket.type }} - R$ {{ticket.price}}</div>
+                  <br><br>
+                      <a href="{% url 'roles:sell_ticket' %}"class="button1"><span></span>Anunciar</a>
+                      <br>
+                      <a href="{% url 'roles:open_ticket' %}"class="button1"><span></span>Abrir</a>
                 </div>
               </a>
             </li>                                             
           {% endfor %}
         </ul>
-        {% if user.is_staff%}
-            <a href="{% url 'roles:create' %}" class="button2">Adicionar Rolê</a>
-        {% endif %}
       </section>
     </div>
   </body>
@@ -32,13 +31,10 @@
     <div class="banner2">
       <section class="list-container">
         <br><br>
-        <h2>Nenhum rolê foi encontrado...</h2>
+        <h2>Você não tem nenhum ingresso...</h2>
         <br><br>
-        {% if user.is_staff %}
-            <a href="{% url 'roles:create' %}" class="button2">Adicionar Rolê</a>
-        {% endif %}
-      </section>
     </div>
   </body>
   {% endif %}
+
 {% endblock content %}
