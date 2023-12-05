@@ -31,7 +31,7 @@ class TicketForm(forms.ModelForm):
         fields = ('type', 'price')
         labels = {
             'type':'Nome do ingresso',
-            'price':'preço',
+            'price':'Preço',
         }
     def __str__(self):
         return self.name
