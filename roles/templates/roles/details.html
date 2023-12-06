@@ -1,14 +1,13 @@
 {% extends 'base.html' %} {% block title %} {{ role.name }} {% endblock title %} {% block content %}
-    <div class="fundo">
-      <section class="paginaReceita">
+    <div class="banner3">
+      <section class="detalhe">
           <article>
-            </div>
               <h1>{{ role.name }}</h1>
-              <br><img src="{{ role.banner_url }}" alt="{{ role.name}}" class="recipe-image">
+              <br><img src="{{ role.banner_url }}" alt="{{ role.name}}" class="role-image">
               <h2><br> Descrição</h2>
-              {{ role.about }}
+              <div class="desc">{{ role.about }}</div>
 
-              <a href="{% url 'roles:tickets' role.id%}" class="btn btn-warning">Comprar</a>
+              <a href="{% url 'roles:tickets' role.id%}" class="button1">Comprar</a>
               
               {% if user.is_staff %}
                   <h2><br> Organização</h2>
