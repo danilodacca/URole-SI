@@ -1,4 +1,5 @@
 {% extends 'base.html' %} 
+{% load qr_code %}
 {% block content %}
   <body>
     <div class="banner2">
@@ -19,7 +20,13 @@
                       {% else %}
                         <a href="{% url 'roles:sell_ticket' id=ticket.id %}" class="button1"><span></span>Anunciar</a>
                         <br>
-                        <a href="" class="button1"><span></span>Abrir</a>
+                        <div id="ex1" class="modal">
+                          {% qr_from_text ticket size=30 %}
+                        </div>
+                        
+                        <!-- Link to open the modal -->
+                        <p><a href="#ex1" rel="modal:open" class="button1">Abrir</a></p>
+
                       {% endif %}
                 </div>
               </a>

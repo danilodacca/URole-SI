@@ -32,6 +32,7 @@ class Ticket(models.Model):
     owner = models.ManyToManyField(settings.AUTH_USER_MODEL, null=True, related_name="owner")
     on_sale = models.BooleanField(default=True, null=True)
     
+    
     def __str__(self):
         return self.role.name+" - "+self.type+" - "+self.owner.all()[0].username
     
