@@ -16,9 +16,9 @@
                   <div class="recipe-title">{{ ticket.type }} - R$ {{ticket.price}}</div>
                   <br><br>
                       {% if ticket.on_sale %}
-                        <a href="{% url 'roles:cancelsell_ticket' id=ticket.id %}" class="button1"><span></span>Cancelar anúncio</a>
+                        <a href="{% url 'roles:cancelsell_ticket' id=ticket.id %}" class="button"><span></span>Cancelar anúncio</a>
                       {% else %}
-                        <a href="{% url 'roles:sell_ticket' id=ticket.id %}" class="button1"><span></span>Anunciar</a>
+                        <a href="{% url 'roles:sell_ticket' id=ticket.id %}" class="button"><span></span> Anunciar </a>
                         <br>
                         <div id="ex1" class="modal">
                           {% qr_from_text ticket size=30 %}

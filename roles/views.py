@@ -107,7 +107,6 @@ def TicketsBuyView(request, pk, id):
     else:
         return TicketsBuyFromUserView().as_view()(request)
 
-@method_decorator(user_passes_test(user_required, login_url='/accounts/login'), name='dispatch')
 class TicketsBuyFromStaffView(generic.CreateView):
     model = Ticket
     template_name = 'roles/buy_ticket.html'
@@ -122,8 +121,9 @@ class TicketsBuyFromStaffView(generic.CreateView):
         form.instance.price = ticket.price
         form.instance.on_sale = False
         form.save()
-        form.instance.owner.add([self.request.user])
+        form.instance.owner.set([self.request.user])
         return super().form_valid(form)
+    
     def get_object(self):
         return Ticket.objects.all().filter(role__id=self.kwargs['pk']).get(id=self.kwargs['id'])
 
