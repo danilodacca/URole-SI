@@ -96,3 +96,18 @@ article li{
         padding-left: 10px;
     }
 }
+
+@media screen and (max-width: 600px) {
+
+    .cadastro h1{
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+    article p{
+        font-size: 10px;
+    }
+    article li{
+        font-size: 10px;
+        padding-left: 10px;
+    }
+}

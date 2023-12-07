@@ -1,42 +1,10 @@
-.detalhe {
-    background-color: #ffffff;
-    padding: 80px;
-    margin: 0 170px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color:rgba(0, 0, 0, 0.75) !important;
-}
-
-.detalhe h1{
-    font-size: 40px;
-    text-align: center;
-}
-
-.detalhe h2 {
-    font-size: 30px;
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    color: #a0a0a0;
-    font-size: larger;
-    margin-top: 0;
-}
-
-
-.detalhe article {
-    font-size: 16px;
-    line-height: 1.5;
-    font-size: larger;
-    color: #666;
-}
-.desc{
-    font-size: 5px;
-    justify-content: flex-end;
-}
-
-article p{
-
-    font-size: large;
+.banner4 {
+    width: auto;
+    min-width: max-content;
+    background-color: blueviolet;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../images/IAroles.jpeg');
+    background-size: cover;
+    background-position: center;
 }
 
 .role-image {
@@ -46,33 +14,59 @@ article p{
     border-radius: 30px;
     width: 700px;
 }
-
-
-
-@media screen and (max-width: 800px) {
-    .paginaReceita  {
-        width: 60%;
-        padding: 10vw;
-        margin: 0 10vw;
-      }
+.detalhe {
+    background-color: #ffffff;
+    padding: 80px;
+    margin: 0 170px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color:rgba(0, 0, 0, 0.75) !important;
+}
+.detalhe h1{
+    font-size: 60px;
+    text-align: center;
+    color:rgba(0, 0, 0, 0.75) !important;
     
-    .listaDeIng{
-        margin: 30px;
-    }
-    .role-image{
-      width: 70%;
-    }
-  }
+}
+
+ul {
+    list-style-type: none;
+}
+
+.desc{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important; 
+    color:rgba(0, 0, 0, 0.75) !important;
+    font-size: 20px;
+    justify-content: flex-end;
+}
 
 
-@media screen and (max-width: 700px) {
+.detalhe article {
+    font-size: 16px;
+    line-height: 1.5;
+    font-size: larger;
+    color:rgba(0, 0, 0, 0.75) !important;
+    text-align: justify;
+    
+}
+
+
+article p{
+    font-size: 25px;
+    color:rgba(0, 0, 0, 0.75) !important;
+}
+
+article li{
+    font-size: 25px;
+}
+
+@media screen and (max-width: 1000px) {
     .detalhe{
-        padding: 10px;
-        margin: 0 30px;
+        padding: 20px;
+        margin: 0 70px;
+        width: 60%;
     }
-    .role-image{
-        width: 40%;
-      }
     .detalhe h1{
         font-size: 30px;
         margin-bottom: 15px;
@@ -84,4 +78,28 @@ article p{
         font-size: 15px;
         padding-left: 10px;
     }
+    .role-image{
+        width: 50%;
+      }
 }
+
+@media screen and (max-width: 600px) {
+    .detalhe{
+        padding: 20px;
+        margin: 0 70px;
+        width: 50%;
+    }
+    .detalhe h1{
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+    article p{
+        font-size: 10px;
+    }
+    article li{
+        font-size: 10px;
+        padding-left: 10px;
+    }
+}
+
+
