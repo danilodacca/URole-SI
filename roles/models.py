@@ -26,11 +26,13 @@ class Role(models.Model):
 
 
 class Ticket(models.Model):
-    type = models.CharField(unique=True, max_length=25)
+    type = models.CharField(max_length=25)
     price = models.FloatField()
     role = models.ForeignKey(Role, null=True, on_delete=models.CASCADE)
     owner = models.ManyToManyField(settings.AUTH_USER_MODEL, null=True, related_name="owner")
+    on_sale = models.BooleanField(default=True, null=True)
+    
     
     def __str__(self):
-        return self.role.name+" - "+self.type
+        return self.role.name+" - "+self.type+" - "+self.owner.all()[0].username
     

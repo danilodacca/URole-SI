@@ -1,11 +1,12 @@
 {% extends 'base.html' %} 
+{% load qr_code %}
 {% block content %}
   <body>
     <div class="banner2">
     {% if ticket_list %}
       <section class="list-container">
         <br><br>
-        <h2>Ingressos</h2>
+        <h2>Seus Ingressos</h2>
         <br><br>
         
         <ul class="single-list">
@@ -14,9 +15,19 @@
                 <div class="single-box">
                   <div class="recipe-title">{{ ticket.type }} - R$ {{ticket.price}}</div>
                   <br><br>
-                      <a href="" class="button1"><span></span>Anunciar</a>
-                      <br>
-                      <a href="" class="button1"><span></span>Abrir</a>
+                      {% if ticket.on_sale %}
+                        <a href="{% url 'roles:cancelsell_ticket' id=ticket.id %}" class="button1"><span></span>Cancelar anúncio</a>
+                      {% else %}
+                        <a href="{% url 'roles:sell_ticket' id=ticket.id %}" class="button1"><span></span>Anunciar</a>
+                        <br>
+                        <div id="ex1" class="modal">
+                          {% qr_from_text ticket size=30 %}
+                        </div>
+                        
+                        <!-- Link to open the modal -->
+                        <p><a href="#ex1" rel="modal:open" class="button1">Abrir</a></p>
+
+                      {% endif %}
                 </div>
               </a>
             </li>                                             

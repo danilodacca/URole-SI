@@ -13,7 +13,10 @@ urlpatterns = [
     path('<int:pk>/delete', views.PostsDeleteView.as_view(), name='delete'),
     path('<int:pk>/tickets', views.TicketsListView, name='tickets'),
     path('<int:pk>/tickets/create', views.TicketsCreateView.as_view(), name='create_ticket'),
-    path('<int:pk>/tickets/<str:type>/update', views.TicketsUpdateView.as_view(), name='update_ticket'),
-    path('<int:pk>/tickets/<str:type>/delete', views.TicketsDeleteView.as_view(), name='delete_ticket'),
-    path('<int:pk>/tickets/<str:type>/buy', views.TicketsBuyView.as_view(), name='buy_ticket'),
+    path('<int:pk>/tickets/<int:id>/update', views.TicketsUpdateView.as_view(), name='update_ticket'),
+    path('<int:pk>/tickets/<int:id>/delete', views.TicketsDeleteView.as_view(), name='delete_ticket'),
+    path('<int:pk>/tickets/<int:id>/buyFromStaff', views.TicketsBuyFromStaffView.as_view(), name='buyStaff_ticket'),
+    path('<int:pk>/tickets/<int:id>/buyFromUser', views.TicketsBuyFromUserView.as_view(), name='buyUser_ticket'),
+    path('tickets/<int:id>/sell', views.TicketsSellView.as_view(), name='sell_ticket'),
+    path('tickets/<int:id>/cancelsell', views.TicketsCancelSellView.as_view(), name='cancelsell_ticket'),
 ]
