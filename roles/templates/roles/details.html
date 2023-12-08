@@ -12,7 +12,7 @@
               {% if user.is_staff %}
                   <h2><br> Organização</h2>
                   <a href="{% url 'roles:update' role.id %}"class="button1"><span></span>Editar</a>
-                  <br><a href="{% url 'roles:delete' role.id %}"class="button1"><span></span>Apagar</a>
+                  <a href="{% url 'roles:delete' role.id %}"class="button1"><span></span>Apagar</a>
               {% endif %}
           </article>  
       </section>

@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="banner2">
+    <br><br>
+    <section class="search-container">
+    <li class="caixa-filtro">
+      <div class="single-box">
 <h2>Anunciar Seu Ingresso</h2>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Anunciar</button>
-</form>
+    <button type="submit" class="button1">Anunciar</button>
+</form></div></li></section></div>
 
 {% endblock content %}

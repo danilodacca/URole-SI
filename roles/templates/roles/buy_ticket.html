@@ -1,11 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Comprar Rolê</h2>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Comprar</button>
-</form>
+<div class="banner2">
+    <br><br>
+    <section class="search-container">
+    <li class="caixa-filtro">
+      <div class="single-box">
+        <h2>Comprar Rolê</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="button1">Comprar</button>
+        </form>
+        </div>
+        </li>
+    </section>
+</div>
 
 {% endblock content %}
