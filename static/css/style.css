@@ -66,3 +66,9 @@
   max-width: 10%;
   height: auto;
   }
+
+.custom-form{
+  margin: 200px auto;
+  justify-content: center;
+  text-align: center;
+}
