@@ -47,7 +47,9 @@ INSTALLED_APPS = [
     'staticpages.apps.StaticpagesConfig',
     'roles.apps.RolesConfig',
     'accounts.apps.AccountsConfig',
-    'qr_code'
+    'qr_code',
+    'rest_framework',
+    'api.apps.ApiConfig',
 ]
 
 MIDDLEWARE = [
