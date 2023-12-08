@@ -43,13 +43,14 @@
   <body>
     <div class="banner2">
       <section class="list-container">
-        <br><br>
-        <h2>Nenhum ingresso foi encontrado...</h2>
-        <br><br>
 
         {% if user.is_staff %}
             <h2><br> Organização</h2>
             <a href="tickets/create" class="button2">Adicionar Ingresso</a>
+        {% else %}
+        <br><br>
+        <h2>Nenhum ingresso foi encontrado...</h2>
+        <br><br>
         {% endif %}
     </div>
   </body>
