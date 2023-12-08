@@ -23,6 +23,7 @@
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     color:rgba(0, 0, 0, 0.75) !important;
+    max-width: 1350px;
 }
 .detalhe h1{
     font-size: 60px;

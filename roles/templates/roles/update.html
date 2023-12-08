@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Atualizar o rolê "{{ role.name }}"</h2>
-<form method="POST" action="{% url 'roles:update' role.id%}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Atualizar</button>
-</form>
-
+<div class="banner2">
+    <section class="cadastro">
+        <article>
+            <h1>Atualizar o rolê "{{ role.name }}"</h1>
+            <form method="POST" class="cadastroForm" action="{% url 'roles:update' role.id%}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="button1">Atualizar</button>
+            </form>
+        </article>
+    </section>
+</div>
 {% endblock content %}

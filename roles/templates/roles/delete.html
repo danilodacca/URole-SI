@@ -2,13 +2,16 @@
 {% block content %}
 <form action="{% url 'roles:delete' role.id %}" method="post">
   {% csrf_token %}
-  <div class="fundo">
-    <section class="paginaReceita">
-        <article>
-            <h2>Você tem certeza que deseja apagar o rolê "{{ role.name }}"?</h2>
+  <div class="banner2">
+    <br><br>
+    <section class="search-container">
+    <li class="caixa-filtro">
+      <div class="single-box">
+        <h2>Você tem certeza que deseja apagar o rolê "{{ role.name }}"?</h2>
             <br><button type="submit" class="button1"><span></span>Apagar</button>
-        </article>
-    </section>
+        </div>
+    </li>
+  </section>
 </div>
 </form>
 {% endblock content %}

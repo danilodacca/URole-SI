@@ -5,7 +5,7 @@
               <h1>{{ role.name }}</h1>
               <br><img src="{{ role.banner_url }}" alt="{{ role.name}}" class="role-image">
               <h2><br> Descrição</h2>
-              <div class="desc">{{ role.about }}</div>
+              <div class="desc">{{ role.about|linebreaks }}</div>
 
               <a href="{% url 'roles:tickets' role.id%}" class="button1">Comprar</a>
               
