@@ -44,11 +44,11 @@
   padding: 15px 10px;
   text-align: center;
   display: block;
-  margin: 0px auto;
+  margin: 20px auto;
   border-radius: 20px;
   font-weight: bold;
   font-size: 20px;
-  border: 2px solid rgb(71, 17, 100);
+  border: 2px solid rgb(255, 255, 255);
   background: transparent;
   color: white;
   cursor: pointer;
