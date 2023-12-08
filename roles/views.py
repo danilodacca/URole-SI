@@ -63,7 +63,7 @@ class TicketsCreateView(generic.CreateView):
     def form_valid(self, form):
         form.instance.role = Role.objects.filter(id=self.kwargs['pk'])[0]
         self.object = form.save()
-        form.instance.owner.add(self.request.user)
+        form.instance.owner.set([self.request.user])
         return super().form_valid(form)
 
 @method_decorator(user_passes_test(staff_required, login_url='/accounts/login'), name='dispatch')
@@ -87,12 +87,11 @@ class TicketsDeleteView(generic.DeleteView):
         return Ticket.objects.all().filter(role__id=self.kwargs['pk']).get(id=self.kwargs['id'])
 
 def TicketsListView(request, pk):
-    ticket_list = Ticket.objects.filter(role=Role.objects.get(id=pk)).exclude(owner=request.user.id).filter(on_sale=True)
+    ticket_list = Ticket.objects.filter(role=Role.objects.get(id=pk)).filter(on_sale=True)
     staff_list = [ticket.id for ticket in ticket_list.exclude(owner__is_staff=False)]
     ticket_list = ticket_list.values_list('type','price', 'id', 'owner', named=True)
-    print(staff_list)
-    print(ticket_list)
-    return render(request,"roles/tickets.html", context={'ticket_list': ticket_list, 'pk_role':pk, 'staff_list': staff_list})
+    own_list = [ticket.id for ticket in ticket_list.filter(owner=request.user.id)]
+    return render(request,"roles/tickets.html", context={'ticket_list': ticket_list, 'pk_role':pk, 'staff_list': staff_list, 'own_list':own_list})
 
 
 def MyTicketsListView(request):

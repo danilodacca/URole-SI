@@ -19,11 +19,15 @@
                       <a href="{% url 'roles:update_ticket' pk=pk_role id=ticket.id %}"class="button1"><span></span>Editar</a>
                       <br><a href="{% url 'roles:delete_ticket' pk=pk_role id=ticket.id %}"class="button1"><span></span>Apagar</a>
                   {% endif %}
-              
-                  {% if ticket.id in staff_list %}
-                      <a href="{% url 'roles:buyStaff_ticket' pk=pk_role id=ticket.id %}" class="button2">Comprar</a>
+                  
+                  {% if ticket.id in own_list %}
+                    <a class="button2">Seu Ingresso</a>
                   {% else %}
-                      <a href="{% url 'roles:buyUser_ticket' pk=pk_role id=ticket.id %}" class="button2">Comprar</a>
+                    {% if ticket.id in staff_list %}
+                        <a href="{% url 'roles:buyStaff_ticket' pk=pk_role id=ticket.id %}" class="button2">Comprar</a>
+                    {% else %}
+                        <a href="{% url 'roles:buyUser_ticket' pk=pk_role id=ticket.id %}" class="button2">Comprar</a>
+                    {% endif %}
                   {% endif %}
                   
                 </div>
