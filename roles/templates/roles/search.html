@@ -1,20 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
-<body>
-<h2>Filtrar Rolês</h2>
-<form action="{% url 'roles:search' %}">
-    <p>
-       
-        <div class="icon"></div>
-        <div class="input">
-            <input type="text" name="query" id="id_query" />
-        </div>
-    </p>
-    <button type="submit">Buscar</button>
-</form>
-</body>
+
 
 <div class="banner2">
+  <br><br>
+  <section class="search-container">
+  <li class="caixa-filtro">
+    <div class="single-box">
+      <h2>Filtrar Rolês</h2>
+      <form action="{% url 'roles:search' %}">
+          <p>
+            
+              <div class="icon"></div>
+              <div class="input">
+                  <input type="text" name="query" id="id_query" />
+              </div>
+          </p>
+          <button type="submit" class="button1">Buscar</button>
+      </form>
+    </div>
+    </li>
+  </section>
+    <br><br>
     {% if post_list %}
       <section class="list-container">
         <br><br>
@@ -36,7 +43,7 @@
       </section>
     </div>
     {% else %}
-<h2>Não possível achar esse rolê...</h2>
+<h2 class="text-search">Não possível achar esse rolê...</h2>
 {% endif %}
 
 {% endblock content %}
