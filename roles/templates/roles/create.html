@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Adicionar Novo Rolê</h2>
+<div class="banner3">
+    <section class="cadastro">
+        <article>
+<h1>Adicionar Novo Rolê</h1>
 <form method="post" action="{% url 'roles:create' %}">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Criar</button>
+    <button type="submit" class="button1">Criar</button>
 </form>
+</article>
+</section>    
+</div>
 
 {% endblock content %}
