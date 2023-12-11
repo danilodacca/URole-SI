@@ -16,8 +16,9 @@
 }
 .detalhe {
     background-color: #ffffff;
-    padding: 80px;
-    margin: 0 170px;
+    padding: 150px;
+    align-items: center;
+    margin: 0 auto;
     justify-content: center;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -66,7 +67,7 @@ article li{
 @media screen and (max-width: 1250px) {
     .detalhe{
         padding: 40px;
-        margin: 0 100px;
+        margin: 0 auto;
         justify-content: center;
         max-width: 500px;
     }
@@ -89,7 +90,7 @@ article li{
 @media screen and (max-width: 800px) {
     .detalhe{
         padding: 80px;
-        margin: 0 70px auto;
+        margin: 0 auto;
         justify-content: center;
         max-width: 320px !important;
     }
